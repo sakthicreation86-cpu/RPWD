@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+/* ── CSS Variables ── */
+:root {
+  --gold: #C9A84C;
+  --gold-light: #E8C97A;
+  --gold-dark: #8B6914;
+  --navy: #0D1B2A;
+  --navy-mid: #1A2D42;
+  --navy-light: #243B55;
+  --cream: #FAF6EF;
+  --cream-dark: #F0E8D8;
+}
+
+/* ── Reset ── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+/* ── Base typography ── */
+body {
+  /* Tamil text renders best with Noto Sans Tamil; Inter handles all English */
+  font-family: 'Noto Sans Tamil', 'Inter', system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.75;
+  color: #1a1a2e;
+  background: var(--cream);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Font helpers ── */
+.font-tamil-serif  { font-family: 'Noto Serif Tamil', serif; }
+.font-tamil-sans   { font-family: 'Noto Sans Tamil', sans-serif; }
+.font-inter        { font-family: 'Inter', system-ui, sans-serif; }
+
+/* ── Hero pulse animation ── */
+@keyframes pulse-ring {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(201,168,76,0.4); }
+  50%       { box-shadow: 0 0 0 18px rgba(201,168,76,0); }
+}
+.animate-pulse-ring { animation: pulse-ring 3s ease-in-out infinite; }
+
+/* ── Scroll hint float ── */
+@keyframes float {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50%       { transform: translateX(-50%) translateY(10px); }
+}
+.animate-float { animation: float 2s ease-in-out infinite; }
+
+/* ── Accordion transition ── */
+.acc-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+.acc-body.open { max-height: 900px; }
+
+/* ── Stat numbers ── */
+.stat-num {
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(2rem, 5vw, 2.75rem);
+  font-weight: 700;
+  color: var(--gold);
+  line-height: 1;
+  display: block;
+}
