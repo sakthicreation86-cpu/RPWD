@@ -33,7 +33,7 @@ export default function Contact() {
     message += `\n*முகவரி:* ${formData.address}`;
     
     // The target WhatsApp number with country code (91)
-    const phone = '918072929876';
+    const phone = '919150907492';
     
     // Create WhatsApp URL API link
     const whatsappUrl = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
